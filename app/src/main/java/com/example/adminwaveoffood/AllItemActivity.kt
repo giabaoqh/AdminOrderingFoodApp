@@ -2,6 +2,7 @@ package com.example.adminwaveoffood
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adminwaveoffood.adapter.MenuItemAdapter
@@ -57,8 +58,24 @@ class AllItemActivity : AppCompatActivity() {
         })
     }
     private fun setAdapter() {
-        val adapter = MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference)
+        val adapter = MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference){ position ->
+            deleteMenuItems(position)
+        }
         binding.MenuRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.MenuRecyclerView.adapter= adapter
+    }
+
+    private fun deleteMenuItems(position: Int) {
+        val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+        val foodMenuReference = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuReference.removeValue().addOnCompleteListener { task ->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.MenuRecyclerView.adapter?.notifyItemRemoved(position)
+            } else{
+                Toast.makeText(this,"Món ăn chưa được xóa", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
