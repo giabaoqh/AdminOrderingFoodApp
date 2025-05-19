@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AdminProfileActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-black"
+        android:maxLines="1"
+        android:text="Thông tin Admin"
+        android:textColor="@color/black"
+        android:textSize="44sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Thông tin của bạn"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/backButton"
+        app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+    <TextView
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:clickable="true"
+        android:drawableLeft="@drawable/edit"
+        android:drawablePadding="6dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Sửa thông tin"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+    <!-- Tên -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical|start"
+            android:paddingStart="18dp"
+            android:text="Tên"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/lato_regular"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Địa chỉ -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical|start"
+            android:paddingStart="18dp"
+            android:text="Địa chỉ"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/lato_regular"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:maxLines="4"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Email -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical|start"
+            android:paddingStart="18dp"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/lato_regular"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- SĐT -->
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical|start"
+            android:paddingStart="18dp"
+            android:text="SĐT"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/lato_regular"
+            android:inputType="phone"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Mật khẩu -->
+    <LinearLayout
+        android:id="@+id/linearLayout_password"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edittextshape"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_vertical|start"
+            android:paddingStart="18dp"
+            android:text="Mật khẩu"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/lato_regular"
+            android:inputType="textPassword"
+            android:hint="Nhập mật khẩu"
+            android:textColor="@color/black"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Nút Lưu thông tin -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveInfoButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/edittextshape"
+        android:fontFamily="sans-serif-black"
+        android:text="Lưu thông tin"
+        android:textAllCaps="false"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
